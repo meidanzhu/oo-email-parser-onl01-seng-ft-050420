@@ -11,7 +11,7 @@ def initialize(csv_emails)
   @csv_emails = csv_emails
 end
 
-def parse
+def parses
   emails.delete(',').split.uniq
 end
 

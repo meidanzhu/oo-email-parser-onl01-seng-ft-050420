@@ -15,10 +15,12 @@ class EmailAddressParser
       @addresses = addresses
     end
 
-   def parse
-     addresses.gsub!(",", "")
-     broken_addresses= addresses.split(" ")
-      broken_addresses.flatten.uniq
-    end
+    def parse
+     csv_emails.split.collect do |address|
+       address.split(',')
+     end
+     .flatten.uniq
+   end
+ end
 
 end

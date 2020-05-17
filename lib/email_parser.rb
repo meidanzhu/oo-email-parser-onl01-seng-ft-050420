@@ -11,8 +11,14 @@ class EmailAddressParser
       @addresses = addresses
   end
 
-def parses
-  emails.delete(',').split.uniq
-end
+  def initialize(addresses)
+      @addresses = addresses
+    end
+
+   def parse
+     addresses.gsub!(",", "")
+     broken_addresses= addresses.split(" ")
+      broken_addresses.flatten.uniq
+    end
 
 end

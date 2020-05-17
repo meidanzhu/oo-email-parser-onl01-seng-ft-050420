@@ -4,12 +4,12 @@
 # or whitespace (' ').
 
 
-class EmailParser
-    attr_accessor :name, :csv_emails
+class EmailAddressParser
+  attr_accessor :addresses
 
-def initialize(csv_emails)
-  @csv_emails = csv_emails
-end
+  def initialize(addresses)
+      @addresses = addresses
+  end
 
 def parses
   emails.delete(',').split.uniq
